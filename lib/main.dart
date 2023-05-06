@@ -21,3 +21,9 @@ class Dice extends StatefulWidget {
   @override
   State<Dice> createState() => _DiceState();
 }
+
+class _DiceState extends State<Dice> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+}
