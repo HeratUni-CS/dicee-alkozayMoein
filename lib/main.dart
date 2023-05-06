@@ -7,17 +7,17 @@ void main() {
         backgroundColor: Colors.red,
         appBar: AppBar(
           backgroundColor: Colors.red,
-          title: Text('Dice'),
+          title: const Text('Dice'),
         ),
-        body: MyApp(),
+        body: const Dice(),
       ),
     ),
   );
 }
 
-class MyApp extends StatelessWidget {
+class Dice extends StatefulWidget {
+  const Dice({super.key});
+
   @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
+  State<Dice> createState() => _DiceState();
 }
