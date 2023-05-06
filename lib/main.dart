@@ -23,7 +23,37 @@ class Dice extends StatefulWidget {
 }
 
 class _DiceState extends State<Dice> {
+  int leftDice = 1;
+  int rightDice = 1;
+  void changeDices() {
+    leftDice = Random().nextInt(6) + 1;
+    rightDice = Random().nextInt(6) + 1;
+  }
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Center(
+      child: Row(
+        children: [
+          Expanded(
+              child: TextButton(
+            child: Image(image: AssetImage('images/dice$leftDice.png')),
+            onPressed: () {
+              setState(() {
+                changeDices();
+              });
+            },
+          )),
+          Expanded(
+              child: TextButton(
+            child: Image(image: AssetImage('images/dice$rightDice.png')),
+            onPressed: () {
+              setState(() {
+                changeDices();
+              });
+            },
+          )),
+        ],
+      ),
+    );
+  }
 }
